@@ -25,3 +25,16 @@ function toboolean(object) --Takes a string or integer value and returns a boole
 end
 --Example: toboolean(0) will return false
 --Example: toboolean("1") will return true
+
+function TablePrint(table)
+   if type(table) == 'table' then
+      local s = '{ '
+      for k,v in pairs(table) do
+         if type(k) ~= 'number' then k = '"'..k..'"' end
+         s = s .. '['..k..'] = ' .. dump(v) .. ','
+      end
+      return s .. '} '
+   else
+      return tostring(table)
+   end
+end
