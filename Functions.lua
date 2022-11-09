@@ -31,7 +31,7 @@ function TablePrint(table)
       local s = '{ '
       for k,v in pairs(table) do
          if type(k) ~= 'number' then k = '"'..k..'"' end
-         s = s .. '['..k..'] = ' .. dump(v) .. ','
+         s = s .. '['..k..'] = ' .. TablePrint(v) .. ','
       end
       return s .. '} '
    else
