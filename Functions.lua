@@ -38,3 +38,9 @@ function TablePrint(table)
       return tostring(table)
    end
 end
+
+function Capitalize(string)
+    string:gsub("%f[%a].", string.upper)
+    return string
+end
+--Example: Capitalize("testing this function") will return "Testing This Function"
