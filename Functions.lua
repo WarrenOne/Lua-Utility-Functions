@@ -44,3 +44,24 @@ function Capitalize(string)
     return string
 end
 --Example: Capitalize("testing this function") will return "Testing This Function"
+
+function StringToTable()
+  
+SampleString = ""
+SampleTable = {}
+for k,v in string.gmatch(SampleString,"(%w+)=(%w+)") do
+  SampleTable[k] = v
+end
+  
+end
+
+function TableToString()
+  
+SampleTable = {}
+SampleString = ""
+for k,v in pairs(SampleTable) do
+  if string.len(SampleString)>0 then c = "," else c = "" end
+  SampleString = SampleString..c..k.."="..v
+end
+  
+end
